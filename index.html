@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AYUSH X DRAGON</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron',sans-serif}
+body{background:#000;color:#add8e6;overflow:hidden}
+canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}
+
+@keyframes glow{0%{box-shadow:0 0 11px #00ff55}50%{box-shadow:0 0 30px #00ff55}100%{box-shadow:0 0 10px #00ff55}}
+@keyframes glitch{0%{text-shadow:3px 2 darkred,-2px 1 cyan}50%{text-shadow:-2px 0 red,2px 0 cyan}100%{text-shadow:2px 0 red,-2px 0 cyan}}
+@keyframes bioGlow{0%{text-shadow:0 0 8px #8b0000}100%{text-shadow:0 0 25px #8b0000}}
+@keyframes up{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+
+.hero-name{
+font-size:60px;
+text-align:center;
+margin:20px 0;
+color:#8b0000;
+letter-spacing:6px;
+animation:glitch 1s infinite;
+text-shadow:0 0 20px #00008b, 0 0 40px #8b0000;
+}
+@media(max-width:768px){
+.hero-name{font-size:42px;}
+}
+
+#access{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#access img{width:220px;height:220px;border-radius:50%;border:4px solid #ff1493;animation:glow 2s infinite}
+#access h1{font-size:43px;animation:glitch 0.5s infinite;letter-spacing:5px}
+#btn{padding:16px 50px;font-size:18px;border:2px solid #00ff55;background:#000;color:#00ff55;border-radius:10px;cursor:pointer;box-shadow:0 0 10px #00ff55;transition:.3s}
+#btn:hover{box-shadow:0 0 25px #00ff55;transform:scale(1.08)}
+
+#barBox{width:300px;height:10px;border:2px solid #8b0000;margin-top:20px;box-shadow:0 0 15px #add8e6}
+
+#bar{height:100%;width:0;background:linear-gradient(90deg, #ff1493, #ffb6c1, #ff1493);box-shadow:0 0 15px #00ff55}
+#txt{margin-top:10px}
+
+#main{display:none;overflow:auto;height:100vh}
+.wrap{max-width:900px;margin:auto;padding:20px;animation:up 0.7s}
+.title{font-size:32px;text-align:center;margin:20px 0;animation:glitch 1.5s infinite}
+.card{border:2px solid #add8e6;border-radius:12px;padding:20px;margin:20px 0;background:rgba(0,0,0,.8)}
+
+.profile img{width:240px;height:240px;border-radius:50%;border:3px solid #00ff55;animation:glow 1s infinite}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{border:1px solid #00ff55;padding:8px;border-radius:6px}
+
+.bio-text{font-size:22px;line-height:1.8;color:#add8e6;animation:bioGlow 2s infinite alternate}
+
+.btn{display:block;width:240px;margin:10px auto;padding:14px;text-align:center;border-radius:10px;text-decoration:none;font-weight:600}
+.yt{border:3px solid darkblue;color:darkblue;box-shadow:0 0 22px skyblue}
+.tg{border:3px solid #00008b;color:#101c86;box-shadow:0 0 22px #1bcefa}
+.ig{border:3px solid #00008b;color:#101c86;box-shadow:0 0 22px #1bcefa}
+.ti{border:3px solid #00008b;color:#101c86;box-shadow:0 0 22px #1bcefa}
+.ta{border:3px solid #00008b;color:#101c86;box-shadow:0 0 22px #1bcefa}
+
+
+#musicBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+padding:12px 20px;
+background:#000;
+color:#00008b;
+border:2px solid #00ff55;
+border-radius:8px;
+cursor:pointer;
+box-shadow:0 0 10px #00ff55;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div id="access">
+<img src="https://uploads.onecompiler.io/44dsza56z/44dsz8je5/IMG_20260216_144927_493.webp">
+<h1>SYSTEM 😈 ACCESS</h1>
+<button id="btn" onclick="go()">ENTER ⛔ SYSTEM</button>
+<div id="barBox"><div id="bar"></div></div>
+<div id="txt">WAITING...</div>
+</div>
+
+<div id="main">
+<div class="wrap">
+
+<div class="hero-name">DRAGON X AYUSH</div>
+
+<div class="title">AYUSH X DRAGON OWNER</div>
+
+<div class="card profile" style="text-align:center">
+<img src="https://uploads.onecompiler.io/44dsza56z/44dsz8je5/IMG_20260216_144927_493.webp">
+<h2>WELCOME TO DRAGON X AYUSH BIO</h2>
+<p>Creative Developer & Tech Enthusiast</p>
+</div>
+
+<div class="card">
+<h3>ABOUT ME</h3>
+<p>I design All design-style websites with animations and modern UI effects|| Caution: My attitude is as bold as my dreams..</p>
+</div>
+
+<div class="card">
+<h3>MY BIO</h3>
+<p class="bio-text">
+𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢  𝙈𝙔 𝘽𝙄𝗢 🫰💫❤️<br><br>
+𝗠𝗬 𝗡𝗔𝗠𝗘 - ℝ𝔸𝕁𝔼𝕊ℍ ℙ𝔸𝕃𝔼ℂℍ𝔸🚬🌹<br>
+𝗠𝗬 𝗪𝗢𝗥𝗞 - ᴳᴬᴹᴱ ᴴᴬᶜᴷ ᴰᴱⱽᴸᴼᴾᴱᴿ🔥🫶<br>
+𝗠𝗬 𝗔𝗚𝗘 - 16✨💥<br>
+𝗠𝗬 𝗕𝗜𝗥𝗧𝗛𝗗𝗔𝗬🎂- 3 𝙎𝙀𝙋𝙏𝙀𝙈𝘽𝙀𝙍👍🤩<br>
+𝗠𝗬 𝗟𝗢𝗖𝗔𝗧𝗜𝗢𝗡 - 🄺🄷🄴🄹🄰🅁🄻🄰 🄹🄾🄳🄷🄿🅄🅁 🅁🄰🄹🅂🅃🄷🄰🄽<br>
+ᴍʏ ʙᴇꜱᴛ ꜰʀɪᴇɴᴅ 💖 - ᴀʏᴜꜱʜ ꜱɪɴɢʜ<br>
+𝗠𝗬 𝗥𝗘𝗟𝗜𝗚𝗜𝗢𝗡- HINDU<br>
+𝗥𝗔𝗝𝗦𝗧𝗛𝗔𝗡𝗜 𝗕𝗢𝗬<br><br>
+</p>
+</div>
+
+<div class="card">
+<h3>SKILLS</h3>
+<div class="tags">
+<div class="tag">HTML</div>
+<div class="tag">CSS</div>
+<div class="tag">JavaScript</div>
+<div class="tag">Java</div>
+<div class="tag">C++</div>
+<div class="tag">FF Mod Maker</div>
+<div class="tag">UI Design</div>
+<div class="tag">Animations</div>
+<div class="tag">Python</div>
+</div>
+</div>
+
+<div class="card" style="text-align:center">
+<h3>NO ADDISON ONLY DARK </h3>
+<a class="btn yt" target="_blank" href="https://t.me/thakurayu45">∆ BEST FRIEND</a>
+<a class="btn tg" target="_blank" href="https://t.me/ayushmodsyt">✈ TELEGRAM</a>
+<a class="btn ig" target="_blank" href="https://t.me/+0-YDWZ49UjxmZDM1">💣 FEEDBACK GROUP</a>
+<a class="btn ti" target="_blank" href="https://t.me/dragon_x_ayush">💬 CONTACT DRAGON X AYUSH</a>
+<a class="btn ta" target="_blank" href="https://t.me/dragon_x_ayush">PANNEL KEY GENERAT 🔜🔜</a>
+</div>
+
+</div>
+</div>
+
+<audio id="bgMusic" loop>
+<source src="https://youtu.be/OiqRnJdXNoE?si=4dAA8e2mMbZdAlx_" type="audio/mpeg">
+</audio>
+
+<script>
+function toggleMusic(){
+const music=document.getElementById("bgMusic");
+if(music.paused){music.play();}
+else{music.pause();}
+}
+
+function go(){
+const music=document.getElementById("bgMusic");
+music.play().catch(()=>{});
+let p=0;
+let bar=document.getElementById('bar');
+let t=document.getElementById('txt');
+let i=setInterval(()=>{
+p+=4;
+bar.style.width=p+'%';
+t.innerText="LOADING SYSTEM... "+p+"%";
+if(p>=100){
+clearInterval(i);
+document.body.style.background="rgba(0, 255, 85, 1.0)";
+setTimeout(()=>{
+document.body.style.background="#000";
+document.getElementById('access').style.display='none';
+document.getElementById('main').style.display='block';
+},200);
+}
+},100);
+}
+
+const c=document.getElementById('matrix');
+const x=c.getContext('2d');
+c.width=innerWidth;
+c.height=innerHeight;
+const letters='01 1 01 11 1 0 0 101 0 10 HACKED BY YOU 01 0 1 01 0111';
+const fs=16;
+const cols=c.width/fs;
+const drops=[];
+for(let i=0;i<cols;i++)drops[i]=1;
+
+setInterval(()=>{
+x.fillStyle='rgba(0,0,0,.05)';
+x.fillRect(0,0,c.width,c.height);
+x.fillStyle='#00ff55';
+x.font=fs+'px monospace';
+for(let i=0;i<drops.length;i++){
+const text=letters[Math.floor(Math.random()*letters.length)];
+x.fillText(text,i*fs,drops[i]*fs);
+if(drops[i]*fs>c.height&&Math.random()>0.975)drops[i]=0;
+drops[i]++;
+}
+},35);
+</script>
+
+</body>
+</html
